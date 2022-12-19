@@ -1,6 +1,10 @@
 /*Esta pagina de estilos incluye todas las modificaciones a los elementos hallados en
 index.html de titulo Felices Fiestas
 Comenzamos estableciendo el body con tamaño adecuado al viewport*/
+:root{
+    background-color: rgb(238, 169, 222);
+    
+}
 body{
     height: 100vh;
     width: 100vh;
@@ -60,7 +64,7 @@ p{
     background-color:transparent;
     color:rgb(165, 126, 156);
     transition: all 1 ease;
-    text-shadow:2px 2px rgb(145, 104, 132);
+    text-shadow:2px 2px rgba(145, 104, 132, 0.356);
     font-size:calc(1vw + 1vh);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: lighter;
