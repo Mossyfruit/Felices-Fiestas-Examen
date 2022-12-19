@@ -1,0 +1,90 @@
+/*Esta pagina de estilos incluye todas las modificaciones a los elementos hallados en
+index.html de titulo Felices Fiestas
+Comenzamos estableciendo el body con tamaño adecuado al viewport*/
+body{
+    height: 100vh;
+    width: 100vh;
+    
+}
+/*Para darle algo mas de vidilla a la presentación, introducimos una animación de deslizamiento llamada
+deslizar, a la que le damos una duración de 2s. Aparte de eso en la siguiente clase determinamos
+el tamaño y caracteristicas de la imagen. Nos aseguramos de que cubra el texto*/
+img{
+    animation-duration: 2s;
+    animation-name: deslizar;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 110%;
+    object-position: 50% 20%;
+    object-fit: cover;
+    transition: all 1s ease;
+}
+/*El siguiente estilo de div nos asegura que tanto la imagen como el texto permaneceran en su lugar post animacion,
+y coloca el texto distribuido arriba a la izquierda de la imagen. Tambien hacemos que el texto 
+se desplace junto a la imagen con la animacion*/
+div{
+    animation-duration: 2s;
+    animation-name: deslizar;
+    position: absolute;
+    top:0%;
+    left:0%;
+    width: 100%;
+    height: 110%;
+    opacity:0;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+    background-color: transparent;
+    transition: all 1s ease;
+
+}
+/*Hacemos la pagina responsiva para dispositivos moviles y viewports de diferentes dimensiones. Esto asegura que
+siempre sea visible la postal.*/
+@media all and (orientation:landscape){
+    img, div{
+        width: 70vh;
+        margin-left:calc(50vw - 35vh);
+    }
+}
+/*En esta etiqueta determinamos las caracteristicas del texto*/
+p{
+    
+    margin: 1px;
+    padding: 0;
+    box-sizing: border-box;
+    font-style: italic;
+    text-align: left;
+    background-color:transparent;
+    color:rgb(165, 126, 156);
+    transition: all 1 ease;
+    text-shadow:2px 2px rgb(145, 104, 132);
+    font-size:calc(1vw + 1vh);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: lighter;
+}
+/*Destacamos particularmente el nombre dandole diferencia estilistica con respecto el resto del texto*/
+p:nth-child(3){
+    color:rgb(175, 41, 0);
+    font-style: oblique;
+}
+/*Hacemos que div responda al hacersele click o hover con el raton blanqueando la imagen y haciendo 
+visible el texto*/
+div:active, div:hover {
+    opacity:1;
+    background-color:rgba(255, 255, 255, 0.533);
+}
+/*Nuestra animacion que hace que toda la postal se deslize de izquierda al centro de la pantalla.*/
+@keyframes deslizar {
+    from{
+        margin-left: 100%;
+        width: 70vh;
+    }
+    to{
+        margin-left:calc(50vw - 35vh);
+        width: 70vh;
+    }
+    
+}
